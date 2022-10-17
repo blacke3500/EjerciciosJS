@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-dark> <!--Se usa data-atributte para solo aplicar directo en el html y evitar hacer mucho código js-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Ejercicios DOM</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Ejercicios del DOM</h1>
+    </header>
+
+    <button class="panel-btn hamburger hamburger--squeeze" type="button">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+
+    <button class="btn-top">&#11014;</button>
+
+    <button class="btn-dark-light">🌙</button>
+
+    <aside class="panel">
+        <nav class="menu">
+            <a href="#seccion1">Reloj Digital y Alarma Sonora</a> <!--Enlaces internos con #-->
+            <a href="#seccion2">Eventos del teclado</a>
+            <a href="#seccion3">Countdown</a>
+            <a href="#seccion4">Responsive con JavaScript</a>
+            <a href="#seccion5">Responsive Tester</a> <!--a[href="seccion$"]*5{Sección$} código más fácil y rápido-->
+            <a href="#seccion6">Detección de dispositivos(User Agent)</a>
+            <a href="#seccion7">Detección de la conexión</a>
+            <a href="#seccion8">Detección de la cámara web</a>
+            <a href="#seccion9">Geolocalización</a>
+            <a href="#seccion10">Filtros de búsqueda</a>
+            <a href="#seccion11">Sorteo Digital</a>
+            <a href="#seccion12">Sección 12</a>
+            <a href="#seccion13">Sección 13</a>
+            <a href="#seccion14">Sección 14</a>
+            <a href="#seccion15">Sección 15</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section id="seccion1" class="section">
+            <h2>Reloj Digital y Alarma Sonora</h2>
+            <div id="mostrar-reloj"></div>
+            <div>
+                <button id="iniciar-reloj">Iniciar reloj</button>
+                <button id="detener-reloj">Detener reloj</button>
+                <button id="iniciar-alarma">Iniciar alarma</button>
+                <button id="detener-alarma">Detener alarma</button>
+            </div>
+        </section>
+
+        <section id="seccion2" class="section">
+            <h2>Eventos del teclado</h2>
+            <div class="rectangulo">
+                <div class="circulo"></div>
+            </div>
+        </section>
+
+        <section id="seccion3" class="section">
+            <h2>Countdown</h2>
+            <div class="countdown"></div>
+
+        </section>
+        <section id="seccion4" class="section">
+            <h2>Responsive con JavaScript</h2>
+            <div id="youtube"></div>
+            <div id="gmaps"></div>
+        </section>
+
+        <section id="seccion5" class="section">
+            <h2>Responsive Tester</h2>
+            <form id="responsive-tester">
+                <input name="direccion" type="url" placeholder="URL" required>
+                <br>
+                <input name="ancho" type="text" placeholder="Ancho" required>
+                <br>
+                <input name="alto" type="text" placeholder="Alto" required>
+                <br>
+                <input name="probar" type="submit" value="Probar">
+                <input name="cerrar" type="button" value="Cerrar">
+                
+            </form>
+        </section> <!--section#seccion$.section*5>h2{Sección $}-->
+
+        <section id="seccion6" class="section">
+            <h2>Detección de dispositivos<br>(User Agent)</h2>
+            <div id="user-device"></div>
+        </section>
+
+        <section id="seccion7" class="section">
+            <h2>Detección de la conexión</h2>
+        </section>
+
+        <section id="seccion8" class="section">
+            <h2>Detección de la cámara web</h2>
+            <video src="" id="video"></video>
+        </section>
+
+        <section id="seccion9" class="section">
+            <h2>Geolocalización</h2>
+            <div id="posicion"></div>
+            <a id="map-link" target="_blank" rel="noopener"></a>
+        </section>
+
+        <section id="seccion10" class="section">
+            <h2>Filtros de búsqueda</h2>
+            <input type="search" placeholder="Buscar..." class="card-filter">
+            <article class="cards">
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/tech" alt="Tech">
+                    <figcaption>Tech</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/animals" alt="Animals">
+                    <figcaption>Animals</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/arch" alt="Arch">
+                    <figcaption>Arch</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/nature" alt="Nature">
+                    <figcaption>Nature</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/people" alt="People">
+                    <figcaption>People</figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://placeimg.com/200/200/any" alt="Any">
+                    <figcaption>Any</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="seccion11" class="section">
+            <h2>Sorteo Digital</h2>
+            <ul class="lenguajes">
+                <li class="lenguaje">JavaScript</li>
+                <li class="lenguaje">PHP</li>
+                <li class="lenguaje">JAVA</li>
+                <li class="lenguaje">C</li>
+                <li class="lenguaje">Python</li>
+                <li class="lenguaje">Ruby</li>
+                <li class="lenguaje">Go</li>
+                <li class="lenguaje">Visual Basic</li>
+            </ul>
+            <button id="ganador-btn">Obtener Ganador</button>
+        </section>
+
+        <section id="seccion12" class="section">
+            <h2>Sección 12</h2>
+        </section>
+
+        <section id="seccion13" class="section">
+            <h2>Sección 13</h2>
+        </section>
+
+        <section id="seccion14" class="section">
+            <h2>Sección 14</h2>
+        </section>
+
+        <section id="seccion15" class="section">
+            <h2>Sección 15</h2>
+        </section>
+
+    </main>
+
+
+
+    <script src="js/index_dom.js" type="module"></script> <!--Type module para poder usar nuestros js en cualquier proyecto-->
+</body>
+</html>

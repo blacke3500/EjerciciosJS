@@ -1,0 +1,266 @@
+/* ****Reset CSS***** */
+/* creación de variables css */
+:root{
+    --main-font: sans-serif;
+    --font-size: 16px;
+    --main-color: #f7df1e;
+    --second-color: #222;
+    --main-modal-color: rgba(247,222,30,0.85);
+    --second-modal-color: rgba(34,34,34,0.85);
+    --container-width: 1200px;
+}
+/* estilo al html en general */
+html{
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+}
+
+/*Heredamos el box sizing a todos los elementos*/
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+/* quitamos el margin por defecto y evitamos que todo el desborde en x se note, lo ocultamos */
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* las imagenes se ajustarán al máximo de su contenedor */
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* ****************Menú de hamburguesa*************************** */
+.header{
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+.header h1{
+    margin: 0 auto; /*cero arriba y abajo y auto a los lados*/
+    text-align: center;
+}
+
+
+.section{
+    padding: 2rem;
+    padding-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width); /*El máximo de la pantalla es de 1200px en ancho*/
+    min-height: 100vh; /*ocupa el tamaño del viewport(vista) en 100%, sin importar su contenido*/
+    text-align: center;
+}
+
+.panel{
+    position: fixed; /*postion fixed para que se aplique a toda la página*/
+    z-index: 998; /*para que esté debajo de nuestro botón*/
+    top: 0;
+    bottom: 0; 
+    left: 0;
+    right: 0; /*con esto se aplica a toda la pantalla*/
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--second-modal-color);
+    /*El menú saldrá De arriba*/
+    /* transform: translate(0,-100%); */
+    /*El menú saldrá De abajo*/
+    /* transform: translate(0,100%); */
+    /*El menú saldrá De izquierda*/
+    /* transform: translate(-100%,0); */
+    /*El menú saldrá De derecha*/
+    /* transform: translate(100%, 0); */
+    transition: transform .3s ease, opacity 0.5s ease; /*para que el menú regrese de manera suave*/
+}
+
+
+.panel.is-active{
+    /* transform: translate(0,0); */
+    opacity: 1; /*el menú aparece y desaparece*/
+    visibility: visible;
+}
+
+.panel-btn{
+    position: fixed;
+    z-index: 999; /*con esto el botón para por encima del contenido actual y el que se agregue*/
+    bottom: 1vh; /*con esto se coloca en la esquina inferior derecha*/
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+}
+
+
+.menu{
+    width: inherit; /*hereda la anchura de su contenedor*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu a{
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--main-color);
+    transition: all 0.3s ease; /*hace que la transición sobre cuando se haga el hover sea mas fluida*/
+}
+
+.menu a:hover{
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+}
+
+
+
+
+/**Eventos del teclado*/
+.rectangulo{
+    background-color: var(--second-color);
+    min-height: 50vh;
+    display: flex;
+}
+
+.circulo{
+    margin: auto;
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--main-color);
+    border-radius: 100px;
+}
+
+
+/*button-top*/
+.btn-top{
+    position: fixed;
+    z-index: 999; /*con esto el botón para por encima del contenido actual y el que se agregue*/
+    bottom: 1vh; /*con esto se coloca en la esquina inferior derecha*/
+    right: calc(4.25rem + 1vw); /*esta pegado al primer botón, ya que toma su anchura inicial y le agrega 1vw*/
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease, opacity 0.3s ease;
+}
+
+.btn-top:hover{
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+
+/*boton-Dark/Light*/
+.btn-dark-light{
+    position: fixed;
+    z-index: 999; /*con esto el botón para por encima del contenido actual y el que se agregue*/
+    bottom: 1vh; /*con esto se coloca en la esquina inferior derecha*/
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    transition: all .3s ease;
+}
+
+.btn-dark-light:hover{
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+
+.darkTheme{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+
+
+/*Detección de conexión*/
+.con-perdida,
+.con-establecida{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+
+.con-perdida{
+    background-color: red;
+}
+
+
+/*Filtros de búsqueda*/
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    transition: all 0.3s ease-out;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.card figcaption{
+    padding: 1rem;
+}
+
+.filter{
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    order: 1; /*se recorren las cartas un lugar*/
+}
